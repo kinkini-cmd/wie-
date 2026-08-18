@@ -31,6 +31,7 @@ function initNavigation() {
     hamburger.addEventListener('click', () => {
       menu.classList.toggle('mobile-open');
       const isOpen = menu.classList.contains('mobile-open');
+      document.body.classList.toggle('nav-open', isOpen);
       hamburger.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
   }
@@ -38,6 +39,7 @@ function initNavigation() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (menu) menu.classList.remove('mobile-open');
+      document.body.classList.remove('nav-open');
       if (hamburger) hamburger.innerHTML = '<i class="fas fa-bars"></i>';
     });
   });

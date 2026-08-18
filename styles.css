@@ -318,6 +318,7 @@ h6 {
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -331,6 +332,10 @@ body {
   flex-direction: column;
   position: relative;
   padding-top: 100px;
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 .bg-animation-canvas {
@@ -457,8 +462,9 @@ button, input, textarea, select {
 .navbar {
   position: fixed;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 92%;
   max-width: 1200px;
   z-index: 1000;
@@ -1814,12 +1820,38 @@ button, input, textarea, select {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .team-card {
+    height: 376px;
+    min-height: 376px;
+  }
+
+  .team-info {
+    min-height: 130px;
+  }
+
+  .team-name {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-role {
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .team-row-center {
     flex-direction: column;
     gap: 1.5rem;
   }
   .team-row-center .team-card {
-    flex: 0 0 100%;
+    flex: none;
+    width: 100%;
+    height: 376px;
     max-width: 100%;
   }
   
@@ -1835,21 +1867,40 @@ button, input, textarea, select {
 @media (max-width: 1150px) {
   .nav-menu {
     position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 70px);
+    top: 96px;
+    left: 4vw;
+    right: 4vw;
+    width: auto;
+    max-height: calc(100dvh - 112px);
     background: #0A0817;
     flex-direction: column;
-    padding: 2.5rem;
-    gap: 1.5rem;
+    align-items: stretch;
+    padding: 1.5rem;
+    gap: 0.4rem;
     transition: 0.3s ease;
     z-index: 999;
     overflow-y: auto;
+    border: 1px solid rgba(137, 0, 242, 0.35);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
   }
   
   .nav-menu.mobile-open {
-    left: 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.85rem 0.75rem;
+    text-align: center;
+    white-space: normal;
   }
   
   .nav-hamburger {
@@ -1870,6 +1921,188 @@ button, input, textarea, select {
   
   .section-title {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 92px;
+  }
+
+  .container,
+  .navbar .container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar {
+    top: 12px;
+    width: calc(100% - 24px);
+    border-radius: 20px;
+    padding: 0.75rem 0;
+  }
+
+  .nav-container {
+    gap: 0.75rem;
+  }
+
+  .logo-img {
+    height: 36px;
+    max-width: min(190px, calc(100vw - 112px));
+  }
+
+  .nav-hamburger {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(137, 0, 242, 0.16);
+  }
+
+  .nav-menu {
+    top: 88px;
+    left: 12px;
+    right: 12px;
+    max-height: calc(100dvh - 100px);
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-title-wrap {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title,
+  .hero-heading {
+    font-size: 2.35rem;
+    letter-spacing: 0;
+  }
+
+  .hero-section {
+    min-height: calc(100dvh - 92px);
+    padding: 4rem 0 3rem;
+  }
+
+  .hero-subheading {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btns,
+  .cta-btns {
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.8rem 1.1rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .welcome-content-panel,
+  .vm-card,
+  .contact-info-card,
+  .map-visual-box {
+    padding: 2rem 1.25rem;
+  }
+
+  .welcome-content h3,
+  .cta-box h3 {
+    font-size: 1.75rem;
+  }
+
+  .welcome-content p,
+  .cta-box p,
+  .vm-card p,
+  .timeline-card p {
+    font-size: 1rem;
+  }
+
+  .stats-grid,
+  .benefits-grid,
+  .pillars-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card-body {
+    padding: 1.35rem;
+  }
+
+  .cta-box {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .about-image-card {
+    padding: 2rem 1.25rem;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .benefit-card,
+  .map-metric-item,
+  .contact-item {
+    align-items: flex-start;
+  }
+
+  .roadmap-container {
+    padding: 2rem 0;
+  }
+
+  .roadmap-step {
+    width: 100%;
+    text-align: center;
+  }
+
+  .map-iframe-container {
+    height: 300px;
+  }
+
+  .countdown-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-item {
+    height: 210px;
+  }
+
+  .faq-question {
+    gap: 1rem;
+    padding: 1.15rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .footer {
+    padding-top: 3.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo-img {
+    height: 34px;
+    max-width: min(170px, calc(100vw - 108px));
+  }
+
+  .section-title,
+  .hero-heading {
+    font-size: 2.1rem;
+  }
+
+  .team-avatar-wrap {
+    width: 120px;
+    height: 120px;
   }
 }
 

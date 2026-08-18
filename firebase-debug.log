@@ -1,0 +1,54 @@
+[debug] [2026-08-11T07:43:11.995Z] ----------------------------------------------------------------------
+[debug] [2026-08-11T07:43:11.998Z] Command:       /usr/bin/node /usr/bin/firebase init hosting
+[debug] [2026-08-11T07:43:11.998Z] CLI Version:   15.26.0
+[debug] [2026-08-11T07:43:11.999Z] Platform:      linux
+[debug] [2026-08-11T07:43:11.999Z] Node Version:  v22.23.2
+[debug] [2026-08-11T07:43:11.999Z] Detected Agent: unknown
+[debug] [2026-08-11T07:43:11.999Z] Time:          Tue Aug 11 2026 13:13:11 GMT+0530 (India Standard Time)
+[debug] [2026-08-11T07:43:12.000Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-08-11T07:43:12.015Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/kinkini/Downloads/WIE WEB (2)(2) (2)/WIE WEB
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-08-11T07:43:14.720Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-08-11T07:43:14.721Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-08-11T07:43:16.575Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-11T07:43:16.575Z] > authorizing via signed-in user (kinkinidimalsha@gmail.com)
+[debug] [2026-08-11T07:43:16.577Z] Checked if tokens are valid: false, expires at: 1786177663906
+[debug] [2026-08-11T07:43:16.577Z] Checked if tokens are valid: false, expires at: 1786177663906
+[debug] [2026-08-11T07:43:16.577Z] > refreshing access token with scopes: []
+[debug] [2026-08-11T07:43:16.583Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-08-11T07:43:16.583Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-11T07:43:17.381Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-08-11T07:43:17.381Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-11T07:43:17.389Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2026-08-11T07:43:18.909Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2026-08-11T07:43:18.909Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2026-08-11T07:43:41.740Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (/usr/lib/node_modules/firebase-tools/node_modules/@inquirer/core/dist/commonjs/lib/create-prompt.js:101:37)
+    at Interface.emit (node:events:519:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1144:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:271:20)
+    at ReadStream.emit (node:events:531:35)
+    at emitKeys (node:internal/readline/utils:370:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+[error] 
+[error] Error: An unexpected error has occurred.

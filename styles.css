@@ -561,6 +561,10 @@ button, input, textarea, select {
   white-space: nowrap;
 }
 
+.nav-menu-cta {
+  display: none;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -838,6 +842,7 @@ button, input, textarea, select {
 .stat-card {
   text-align: center;
   padding: 2rem 1rem;
+  height: 100%;
 }
 
 .stat-number {
@@ -863,12 +868,6 @@ button, input, textarea, select {
   gap: 2rem;
 }
 
-@media (max-width: 992px) {
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .events-row-center {
   grid-column: 1 / -1;
   display: flex;
@@ -881,9 +880,27 @@ button, input, textarea, select {
   max-width: calc((100% - 4rem) / 3);
 }
 
+@media (max-width: 992px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .events-row-center .event-card {
+    flex: 0 0 calc((100% - 2rem) / 2);
+    max-width: calc((100% - 2rem) / 2);
+  }
+}
+
 @media (max-width: 600px) {
   .events-grid {
     grid-template-columns: 1fr;
+  }
+  .events-row-center {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .events-row-center .event-card {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -892,6 +909,7 @@ button, input, textarea, select {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .event-card-img {
@@ -1005,6 +1023,7 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  height: 100%;
 }
 
 .benefit-icon {
@@ -1078,6 +1097,9 @@ button, input, textarea, select {
 .pillar-card {
   padding: 2.5rem 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pillar-icon-wrap {
@@ -1103,6 +1125,7 @@ button, input, textarea, select {
   color: var(--text-muted);
   font-size: 0.98rem;
   line-height: 1.7;
+  flex-grow: 1;
 }
 
 /* Volunteer Roadmap Visual */
@@ -1304,7 +1327,7 @@ button, input, textarea, select {
 /* Team Grid */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -1316,27 +1339,16 @@ button, input, textarea, select {
 }
 
 .team-row-center .team-card {
-  flex: 0 0 calc((100% - 6rem) / 4);
-  max-width: calc((100% - 6rem) / 4);
+  flex: 0 0 calc((100% - 4rem) / 3);
+  max-width: calc((100% - 4rem) / 3);
 }
 
 .team-card {
-  background: #1A1230;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition: var(--transition);
-}
-
-.team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
-  border-color: var(--border-highlight);
 }
 
 .team-avatar-wrap {
@@ -1752,15 +1764,15 @@ button, input, textarea, select {
 }
 
 /* Responsive Media Queries */
-@media (max-width: 1200px) {
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+
 
 @media (max-width: 992px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .team-row-center .team-card {
+    flex: 0 0 calc((100% - 2rem) / 2);
+    max-width: calc((100% - 2rem) / 2);
   }
   
   .hero-grid, .about-hero-grid, .welcome-grid, .vm-grid, .map-grid, .contact-grid, .footer-grid {
@@ -1802,6 +1814,14 @@ button, input, textarea, select {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  .team-row-center {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .team-row-center .team-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
   
   .section-title {
     font-size: 2rem;
@@ -1825,6 +1845,7 @@ button, input, textarea, select {
     gap: 1.5rem;
     transition: 0.3s ease;
     z-index: 999;
+    overflow-y: auto;
   }
   
   .nav-menu.mobile-open {
@@ -1835,6 +1856,16 @@ button, input, textarea, select {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  
+  .nav-cta-btn {
+    display: none;
+  }
+  
+  .nav-menu-cta {
+    display: inline-flex;
+    margin-top: 1rem;
+    width: 100%;
   }
   
   .section-title {

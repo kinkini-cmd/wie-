@@ -901,11 +901,12 @@ button, input, textarea, select {
     grid-template-columns: 1fr;
   }
   .events-row-center {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
   .events-row-center .event-card {
-    flex: 0 0 100%;
+    flex: none;
     max-width: 100%;
   }
 }
@@ -915,7 +916,6 @@ button, input, textarea, select {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .event-card-img {

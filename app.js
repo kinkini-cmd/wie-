@@ -2,13 +2,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  initRouter();
+  initScrollSpy();
   initCountdowns();
   initGallery();
   initFAQ();
   initRoadmap();
   initForms();
   initNavbarFade();
+  initWelcomeModal();
+  initCounterAnimation();
   try {
     initScrollReveal();
   } catch (e) {
@@ -45,6 +47,35 @@ function initNavigation() {
   });
 }
 
+// Scroll Spy - highlight nav link based on scroll position
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateActiveLink() {
+    let current = '';
+    const scrollPos = window.scrollY + 150;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
+}
+
 // Navbar bottom line fade on scroll
 function initNavbarFade() {
   const navbar = document.querySelector('.navbar');
@@ -72,42 +103,59 @@ function initNavbarFade() {
   updateNavbarFade();
 }
 
-// Router for SPA navigation
-function initRouter() {
-  const pages = document.querySelectorAll('.page-section');
-  const navLinks = document.querySelectorAll('.nav-link');
+// Counter Animation for Annual Highlights
+function initCounterAnimation() {
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  let hasAnimated = false;
 
-  function navigateTo(hash) {
-    let targetHash = hash || '#home';
-    if (!document.querySelector(targetHash)) {
-      targetHash = '#home';
-    }
+  function animateCounters() {
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const duration = 2000;
+      const start = 0;
+      const startTime = performance.now();
 
-    pages.forEach(page => {
-      if ('#' + page.id === targetHash) {
-        page.classList.add('active');
-      } else {
-        page.classList.remove('active');
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(easeOut * target);
+
+        if (target >= 100) {
+          counter.textContent = current + '+';
+        } else {
+          counter.textContent = current;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target + '+';
+        }
       }
-    });
 
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === targetHash) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+      requestAnimationFrame(updateCounter);
     });
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  window.addEventListener('hashchange', () => {
-    navigateTo(window.location.hash);
-  });
+  function checkVisibility() {
+    if (hasAnimated) return;
 
-  // Initial load
-  navigateTo(window.location.hash);
+    const statsSection = document.querySelector('.stats-grid');
+    if (!statsSection) return;
+
+    const rect = statsSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight * 0.8) {
+      hasAnimated = true;
+      animateCounters();
+    }
+  }
+
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  checkVisibility();
 }
 
 // Live Countdown Timers for Upcoming Events
@@ -313,4 +361,41 @@ function initBackgroundAnimation() {
   animate();
 
   window.addEventListener('resize', resize);
+}
+
+// Welcome Modal - Show on first visit
+function initWelcomeModal() {
+  const modal = document.getElementById('welcome-modal');
+  const closeBtn = document.getElementById('welcome-modal-close');
+  
+  if (!modal) return;
+
+  // Show modal after a short delay
+  setTimeout(() => {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }, 800);
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  // Close on click outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 }

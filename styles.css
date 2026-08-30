@@ -461,7 +461,7 @@ button, input, textarea, select {
 /* Header & Navigation */
 .navbar {
   position: fixed;
-  top: 16px;
+  top: 12px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -472,8 +472,8 @@ button, input, textarea, select {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(137, 0, 242, 0.3);
-  border-radius: 24px;
-  padding: 1rem 0;
+  border-radius: 20px;
+  padding: 0.6rem 0;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
 }
@@ -487,8 +487,7 @@ button, input, textarea, select {
 .nav-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .brand-logo {
@@ -500,6 +499,7 @@ button, input, textarea, select {
   border-radius: 0;
   box-shadow: none;
   transition: var(--transition);
+  margin-right: auto;
 }
 
 .brand-logo:hover {
@@ -508,8 +508,8 @@ button, input, textarea, select {
 }
 
 .logo-img {
-  height: 42px;
-  max-width: 220px;
+  height: 36px;
+  max-width: 200px;
   object-fit: contain;
   display: block;
 }
@@ -521,16 +521,17 @@ button, input, textarea, select {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: 1.2rem;
   white-space: nowrap;
+  margin-left: auto;
 }
 
 .nav-link {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-muted);
   position: relative;
-  padding: 0.4rem 0;
+  padding: 0.3rem 0;
   white-space: nowrap;
 }
 
@@ -619,25 +620,9 @@ button, input, textarea, select {
   cursor: pointer;
 }
 
-/* Router Page Containers */
+/* Page Sections - All visible for single page scroll */
 .page-section {
-  display: none;
-  animation: fadeIn 0.4s ease-in-out forwards;
-}
-
-.page-section.active {
   display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Hero Section */
@@ -2104,6 +2089,135 @@ button, input, textarea, select {
     width: 120px;
     height: 120px;
   }
+}
+
+/* Welcome Popup Modal */
+.welcome-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(10, 8, 23, 0.9);
+  backdrop-filter: blur(20px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.welcome-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.welcome-modal-content {
+  max-width: 700px;
+  width: 100%;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-modal.active .welcome-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.welcome-modal-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.welcome-modal-close:hover {
+  color: var(--accent-light);
+  transform: rotate(90deg);
+}
+
+.welcome-modal-body .welcome-content-panel {
+  padding: 4rem 3rem;
+  max-width: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-modal-body .welcome-content-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(155, 68, 255, 0.8),
+    rgba(200, 170, 255, 0.8),
+    transparent 25%
+  );
+  animation: rotateBorderGlow 4s linear infinite;
+  z-index: 1;
+}
+
+.welcome-modal-body .welcome-content-panel::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: calc(var(--radius-lg) - 2px);
+  z-index: 2;
+}
+
+.welcome-modal-body .welcome-content {
+  position: relative;
+  z-index: 3;
+}
+
+.welcome-modal-body .welcome-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.welcome-modal-body .welcome-content p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 576px) {
+  .welcome-modal-body .welcome-content-panel {
+    padding: 2.5rem 1.5rem;
+  }
+  .welcome-modal-body .welcome-content h3 {
+    font-size: 1.4rem;
+  }
+  .welcome-modal-close {
+    top: -40px;
+    font-size: 2rem;
+  }
+}
+
+/* Single page scroll improvements */
+html {
+  scroll-padding-top: 120px;
+}
+
+/* Smooth scroll offset for fixed header */
+section[id] {
+  scroll-margin-top: 120px;
 }
 
 /* Scroll Reveal & Motion Animations */

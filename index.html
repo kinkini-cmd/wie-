@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IEEE WIE SLTC - Women in Engineering Student Branch Affinity Group</title>
+  <meta name="description" content="Official website of IEEE Women in Engineering Student Branch Affinity Group of Sri Lanka Technological Campus (SLTC). Empowering women in STEM.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Background Technical Animation Canvas -->
+  <canvas id="bg-canvas" class="bg-animation-canvas"></canvas>
+  <div class="bg-black-overlay"></div>
+
+   <!-- Shared Header & Navigation -->
+   <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo">
+        <img src="assets/logo_transparent.png" alt="IEEE WIE SLTC Logo" class="logo-img">
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#events" class="nav-link">Events</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-menu-cta">Join Us</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="page-section active">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <canvas class="hero-background"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="section-tag animate-reveal" style="animation-delay: 0.1s;">IEEE WIE SLTC</span>
+            <h1 class="hero-heading animate-reveal" style="animation-delay: 0.25s;">Empowering Women.<br><span class="gradient-text">Inspiring Innovation.</span><br>Building the Future.</h1>
+            <p class="hero-subheading animate-reveal" style="animation-delay: 0.4s;">The IEEE Women in Engineering Student Branch Affinity Group of SLTC is committed to empowering future engineers, fostering innovation, promoting diversity, and creating opportunities for leadership, collaboration, and professional growth.</p>
+            <div class="hero-btns animate-reveal" style="animation-delay: 0.55s;">
+              <a href="#events" class="btn btn-outline"><i class="fas fa-calendar-alt"></i> Explore Events</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Welcome Message removed from normal layout - moved to popup modal -->
+
+      <!-- Annual Highlights Preview -->
+      <div class="section highlights-section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Yearly Achievements</span>
+            <h2 class="section-title">Annual Highlights</h2>
+          </div>
+          <div class="stats-grid">
+            <div class="glass-panel stat-card">
+              <div class="stat-number" data-target="20">0</div>
+              <div class="stat-label">Events</div>
+            </div>
+            <div class="glass-panel stat-card">
+              <div class="stat-number" data-target="1200">0</div>
+              <div class="stat-label">Participants</div>
+            </div>
+            <div class="glass-panel stat-card">
+              <div class="stat-number" data-target="18">0</div>
+              <div class="stat-label">Universities Reached</div>
+            </div>
+            <div class="glass-panel stat-card">
+              <div class="stat-number" data-target="25">0</div>
+              <div class="stat-label">Industry Speakers</div>
+            </div>
+            <div class="glass-panel stat-card">
+              <div class="stat-number" data-target="8">0</div>
+              <div class="stat-label">Community Projects</div>
+            </div>
+            <div class="glass-panel stat-card">
+              <div class="stat-number" data-target="150">0</div>
+              <div class="stat-label">Volunteers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="section">
+        <div class="container">
+          <div class="cta-box">
+            <h3>Shape the Future with Us</h3>
+            <p>Join a community of passionate innovators, visionary leaders, and future engineers. Whether you're looking to learn, lead, collaborate, or make a difference, IEEE WIE SLTC is the place where your journey begins.</p>
+            <div class="cta-btns">
+              <a href="#contact" class="btn btn-primary"><i class="fas fa-user-plus"></i> Join IEEE WIE</a>
+              <a href="#what-we-do" class="btn btn-outline"><i class="fas fa-hands-helping"></i> Become a Volunteer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: ABOUT -->
+    <section id="about" class="page-section">
+      <div class="section">
+        <div class="container">
+          <div class="about-hero-grid">
+            <div class="about-text">
+              <span class="section-tag">About Us</span>
+              <h2 class="section-title">About IEEE WIE SLTC</h2>
+              <p>The IEEE Women in Engineering (WIE) Student Branch Affinity Group of Sri Lanka Technological Campus (SLTC) is a vibrant community dedicated to inspiring, supporting, and empowering women pursuing careers in science, technology, engineering, and mathematics (STEM).</p>
+              <p>As part of the world's largest international professional organization for advancing technology, we create opportunities for students to develop leadership skills, build technical expertise, engage in innovative projects, and connect with industry professionals.</p>
+              <p>Through workshops, hackathons, mentoring sessions, community outreach initiatives, and networking events, we strive to inspire every student to reach their fullest potential while promoting diversity, inclusion, and excellence in engineering.</p>
+            </div>
+            <div class="about-image-card">
+              <img src="assets/logo_transparent.png" alt="IEEE WIE SLTC Logo" class="about-card-logo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Join WIE? -->
+      <div class="section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Why Join WIE?</span>
+            <h2 class="section-title">Become Part of Something Bigger</h2>
+            <p class="section-subtitle">When you join IEEE WIE SLTC, you become part of a global community that supports innovation, diversity, and professional growth.</p>
+          </div>
+          <div class="benefits-grid">
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-award"></i></div>
+              <h4>Leadership Opportunities</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-network-wired"></i></div>
+              <h4>Networking with Industry Experts</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-laptop-code"></i></div>
+              <h4>Technical Workshops</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+              <h4>International Exposure</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-trophy"></i></div>
+              <h4>Competitions & Hackathons</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+              <h4>Community Service</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+              <h4>Career Development</h4>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-medal"></i></div>
+              <h4>Professional Recognition</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <div class="section">
+        <div class="container">
+          <div class="vm-grid">
+            <div class="glass-panel vm-card">
+              <h3><i class="fas fa-eye gradient-text"></i> Vision</h3>
+              <p>To inspire, empower, and support women in engineering and technology while creating an inclusive community that nurtures innovation, leadership, and lifelong learning.</p>
+            </div>
+            <div class="glass-panel vm-card">
+              <h3><i class="fas fa-bullseye gradient-text"></i> Mission</h3>
+              <ul class="mission-list">
+                <li><i class="fas fa-check-circle"></i> Encourage more women to pursue STEM careers.</li>
+                <li><i class="fas fa-check-circle"></i> Foster leadership and professional development.</li>
+                <li><i class="fas fa-check-circle"></i> Promote innovation and technical excellence.</li>
+                <li><i class="fas fa-check-circle"></i> Build a supportive and inclusive engineering community.</li>
+                <li><i class="fas fa-check-circle"></i> Create opportunities for networking and collaboration.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partners Section -->
+      <div class="section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Collaboration</span>
+            <h2 class="section-title">Our Partners</h2>
+            <p class="section-subtitle">We proudly collaborate with universities, organizations, and industry leaders who share our vision of empowering future innovators.</p>
+          </div>
+          
+          <div class="marquee-wrapper">
+            <div class="marquee-content">
+              <div class="partner-logo-pill"><img src="assets/Pasted image (4).png" alt="Dialog axiata Plc"> Dialog axiata Plc</div>
+              <div class="partner-logo-pill"><img src="assets/Pasted image (5).png" alt="Pearlbay"> Pearlbay</div>
+              <div class="partner-logo-pill"><img src="assets/Pasted image (6).png" alt="Cad centre"> Cad centre</div>
+              <div class="partner-logo-pill"><img src="assets/Pasted image (7).png" alt="Code chef"> Code chef</div>
+              <div class="partner-logo-pill"><img src="assets/Pasted image (8).png" alt="Coca cola"> Coca cola</div>
+              <div class="partner-logo-pill"><i class="fas fa-building gradient-text"></i> Atrium education</div>
+              <div class="partner-logo-pill"><img src="assets/Pasted image (4).png" alt="Dialog axiata Plc"> Dialog axiata Plc</div>
+              <div class="partner-logo-pill"><img src="assets/Pasted image (5).png" alt="Pearlbay"> Pearlbay</div>
+            </div>
+          </div>
+
+          <div class="section-title-wrap" style="margin-top: 4rem; margin-bottom: 2rem;">
+            <h3 style="font-size: 1.8rem;">How We Collaborate</h3>
+          </div>
+          <div class="benefits-grid">
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-hand-holding-usd"></i></div>
+              <div>
+                <h4>Sponsor Events</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Support flagship hackathons & conferences.</p>
+              </div>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              <div>
+                <h4>Conduct Workshops</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Share industry expertise with students.</p>
+              </div>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-user-check"></i></div>
+              <div>
+                <h4>Recruit Students</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Connect directly with top STEM talent.</p>
+              </div>
+            </div>
+            <div class="glass-panel benefit-card">
+              <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
+              <div>
+                <h4>Collaborate on Projects</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Drive technical and community impact.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 3rem;">
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Become a Partner</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: EVENTS & PROJECTS -->
+    <section id="events" class="page-section">
+      <div class="section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Programs</span>
+            <h2 class="section-title">Featured Projects & Events</h2>
+          </div>
+          <div class="events-grid">
+            <div class="glass-panel event-card">
+              <img src="assets/wistem.jpg" alt="WiSTEM" class="event-card-img">
+              <div class="event-card-body">
+                <h4>WiSTEM</h4>
+                <p>A humanitarian STEM outreach initiative that inspired students from underprivileged schools through career guidance, interactive learning activities, and educational resource donations, promoting STEM education and empowering future innovators.</p>
+              </div>
+            </div>
+            <div class="glass-panel event-card">
+              <img src="assets/WhatsApp Image 2026-08-18 at 11.35.30 PM(1).jpeg" alt="BlenderOps" class="event-card-img">
+              <div class="event-card-body">
+                <h4>BlenderOps</h4>
+                <p>An international hands-on workshop introducing undergraduate students to 3D modelling, rendering, and animation using Blender, fostering creativity, technical skills, and innovation.</p>
+              </div>
+            </div>
+            <div class="glass-panel event-card">
+              <img src="assets/2.png" alt="InspiHER{Tech} V4.0" class="event-card-img">
+              <div class="event-card-body">
+                <h4>InspiHER{Tech} V4.0</h4>
+                <p>The flagship technical initiative of IEEE WIE SLTC, featuring workshops, technical challenges, and a hackathon to equip university students with practical skills in Machine Learning, Artificial Intelligence, Quantum Computing, and programming while promoting innovation and collaboration.</p>
+              </div>
+            </div>
+            <div class="events-row-center">
+              <div class="glass-panel event-card">
+                <img src="assets/WhatsApp Image 2026-08-19 at 12.13.19 AM(1).jpeg" alt="IEEE WIE Day '26" class="event-card-img">
+                <div class="event-card-body">
+                  <h4>IEEE WIE Day '26</h4>
+                  <p>A virtual celebration of IEEE WIE Day 2026 featuring an inspiring keynote on STEM leadership, an interactive Kahoot challenge, and LinkedIn-shareable achievement badges, encouraging responsible innovation, leadership, and continuous learning among STEM undergraduates.</p>
+                </div>
+              </div>
+              <div class="glass-panel event-card">
+                <img src="assets/violetglow.png" alt="VioletGlow'26" class="event-card-img">
+                <div class="event-card-body">
+                  <h4>VioletGlow'26</h4>
+                  <p>A commemorative celebration marking the 7th Anniversary of the IEEE WIE Student Branch Affinity Group of SLTC. The event brought members together through interactive activities, entertainment, and networking, strengthening community spirit, collaboration, and member engagement.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: TEAM -->
+    <section id="team" class="page-section">
+      <!-- Executive Committee -->
+      <div class="section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Executive Committee</span>
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">Behind every successful initiative is a passionate team dedicated to empowering the next generation of engineers.</p>
+          </div>
+          <div class="team-grid">
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/Kavindhya Thathsarani.jpg" alt="Kavindhya Thathsarani" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Kavindhya Thathsarani</h4>
+                <div class="team-role">Chairperson</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/K.W.K.D.jpeg" alt="Kavindi Dilshara" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Kavindi Dilshara</h4>
+                <div class="team-role">Vice Chairperson</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/Pasted image.png" alt="Himasha Nethmini" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Himasha Nethmini</h4>
+                <div class="team-role">Secretary</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/W.A.D.K.jpeg" alt="Deshini Kawya" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Deshini Kawya</h4>
+                <div class="team-role">Assistant Secretary</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/Chavini.jpg" alt="Chavini Wijerathna" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Chavini Wijerathna</h4>
+                <div class="team-role">Treasurer</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/WhatsApp Image 2026-08-18 at 11.29.11 PM.jpeg" alt="Chomilka Chemini" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Chomilka Chemini</h4>
+                <div class="team-role">Assistant Treasurer</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-row-center">
+              <div class="glass-panel team-card">
+                <div class="team-avatar-wrap">
+                  <img src="assets/Pasted image (2) (Edited).png" alt="Vidumini Sanjula" onerror="this.style.display='none'">
+                </div>
+                <div class="team-info">
+                  <h4 class="team-name">Vidumini Sanjula</h4>
+                  <div class="team-role">Web Master</div>
+                  <div class="team-socials">
+                    <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-panel team-card">
+                <div class="team-avatar-wrap">
+                  <img src="assets/Pasted image (3).png" alt="Dimalsha Kinkini" onerror="this.style.display='none'">
+                </div>
+                <div class="team-info">
+                  <h4 class="team-name">Dimalsha Kinkini</h4>
+                  <div class="team-role">Assistant Web Master</div>
+                  <div class="team-socials">
+                    <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub Committee -->
+      <div class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="team-section-header">
+            <span class="section-tag">Sub Committee</span>
+            <h3 class="team-subsection-title">Our Sub Committee</h3>
+            <p class="section-subtitle">A dedicated team working together to create meaningful opportunities, programs, and experiences.</p>
+          </div>
+          <div class="team-grid">
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/Poojani Onethra.jpeg" alt="Poojani Onethra" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Poojani Onethra Karunakalage</h4>
+                <div class="team-role">Membership Development Head</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/Linara K. G. S..jpg" alt="K. G. S. Linara" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Linara Gallage</h4>
+                <div class="team-role">Volunteer Engagement Head</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                  <img src="assets/P.K.jpeg" alt="P.K. Vihangi Randika" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Vihangi Randika</h4>
+                <div class="team-role">Editorial Head</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/S.M.C.P.jpeg" alt="Chamya Piyumavi Senanayaka" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Chamya Piyumavi Senanayaka</h4>
+                <div class="team-role">Finance Head</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/S.png" alt="S.B. Suwani Dilesha" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Suwani Dilesha</h4>
+                <div class="team-role">Public Visibility Head</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel team-card">
+              <div class="team-avatar-wrap">
+                <img src="assets/Pasted image (2).png" alt="S.M. Sewwandi Thathsarani" onerror="this.style.display='none'">
+              </div>
+              <div class="team-info">
+                <h4 class="team-name">Sewwandi Thathsarani</h4>
+                <div class="team-role">Program and Logistic Head</div>
+                <div class="team-socials">
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-row-center">
+              <div class="glass-panel team-card">
+                <div class="team-avatar-wrap">
+                  <img src="assets/Priyanuja Udayakumar.jpeg" alt="U. Priyanuja" onerror="this.style.display='none'">
+                </div>
+                <div class="team-info">
+                  <h4 class="team-name">Priyanuja Udayakumar</h4>
+                  <div class="team-role">Industry Outreach Head</div>
+                  <div class="team-socials">
+                    <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: GALLERY -->
+    <section id="gallery" class="page-section">
+      <div class="section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Memories</span>
+            <h2 class="section-title">Capturing Our Journey</h2>
+            <p class="section-subtitle">Explore memorable moments from our workshops, competitions, outreach programs, celebrations, and flagship events.</p>
+          </div>
+
+          <!-- Featured Facebook Post -->
+          <div class="featured-facebook-section">
+            <div class="glass-panel facebook-card">
+              <div class="facebook-embed-wrap">
+                <div class="fb-post" href="https://www.facebook.com/100064100827956/posts/1470833325063348/?app=fbl"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-grid">
+            <!-- Gallery images removed -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox-modal" class="lightbox-modal">
+        <div class="lightbox-content">
+          <button id="lightbox-close" class="lightbox-close">&times;</button>
+          <img id="lightbox-img" class="lightbox-img" src="" alt="Gallery Preview">
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: CONTACT -->
+    <section id="contact" class="page-section">
+      <div class="section">
+        <div class="container">
+          <div class="section-title-wrap">
+            <span class="section-tag">Connect</span>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We would love to hear from you.</p>
+          </div>
+          <div class="contact-grid">
+            <div class="glass-panel contact-info-card">
+              <h3>Contact Details</h3>
+              <div class="contact-detail-group">
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <div>
+                    <h5 style="color: var(--text-main);">Campus Location</h5>
+                    <p style="color: var(--text-muted);">Sri Lanka Technological Campus (SLTC), Ingiriya Road, Padukka, Sri Lanka.</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                  <div>
+                    <h5 style="color: white;">Official Email</h5>
+                    <p style="color: var(--text-muted);"><a href="mailto:sltcieeewie@gmail.com" style="color: var(--accent-light);">sltcieeewie@gmail.com</a></p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-users"></i></div>
+                  <div>
+                    <h5 style="color: white;">Affinity Group</h5>
+                    <p style="color: var(--text-muted);">IEEE WIE Student Branch Affinity Group - SLTC</p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 3rem;">
+                <h5 style="color: var(--text-main); margin-bottom: 1rem;">Social Media</h5>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Follow us on our social media platforms to stay updated with our latest events, opportunities, and announcements.</p>
+                <div class="team-socials" style="justify-content: flex-start; gap: 1rem;">
+                  <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="glass-panel" style="padding: 3rem;">
+              <h3 style="margin-bottom: 1.5rem;">Send Us a Message</h3>
+              <form id="contact-form">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-subject">Subject</label>
+                  <input type="text" id="contact-subject" class="form-input" placeholder="How can we help?" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-message">Message</label>
+                  <textarea id="contact-message" class="form-input" rows="5" placeholder="Type your message here..." required></textarea>
+                </div>
+                 <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+               </form>
+             </div>
+           </div>
+
+           <!-- Map Section -->
+           <div class="contact-map-section" style="margin-top: 4rem;">
+             <div class="section-title-wrap" style="margin-bottom: 2rem;">
+               <span class="section-tag">Find Us</span>
+               <h3 style="font-size: 1.8rem;">Our Location</h3>
+             </div>
+             <div class="map-iframe-container" style="height: 350px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(137, 0, 242, 0.35); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+               <iframe 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.5758509823906!2d80.1224526!3d6.8213291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2524d6bb0a26f%3A0x63390be104ef9df6!2sSLTC%20Research%20University!5e0!3m2!1sen!2slk!4v1717882200000!5m2!1sen!2slk" 
+                 width="100%" 
+                 height="100%" 
+                 style="border:0;" 
+                 allowfullscreen="" 
+                 loading="lazy" 
+                 referrerpolicy="no-referrer-when-downgrade">
+               </iframe>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo footer-logo">
+            <img src="assets/logo_transparent.png" alt="IEEE WIE SLTC Logo" class="logo-img">
+          </a>
+          <h3 style="font-size: 1.1rem; color: var(--text-main);">IEEE Women in Engineering Student Branch Affinity Group</h3>
+          <p>Empowering the next generation of innovators through leadership, technology, collaboration, and inclusion.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#team">Team</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <div class="footer-links">
+            <a href="https://www.ieee.org" target="_blank" rel="noopener">IEEE</a>
+            <a href="https://wie.ieee.org" target="_blank" rel="noopener">IEEE WIE</a>
+            <a href="https://ieee.lk" target="_blank" rel="noopener">IEEE Sri Lanka Section</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright 2026 IEEE Women in Engineering Student Branch Affinity Group of SLTC. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+
+  <!-- Facebook SDK for official post embed -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+</body>
+
+<!-- Chairperson's Welcome Popup Modal -->
+<div id="welcome-modal" class="welcome-modal">
+  <div class="welcome-modal-content">
+    <button class="welcome-modal-close" id="welcome-modal-close">&times;</button>
+    <div class="welcome-modal-body">
+      <div class="welcome-content-panel">
+        <div class="welcome-content">
+          <span class="section-eyebrow">Chairperson's Message</span>
+          <h2>Welcome to IEEE Women in Engineering (WIE)</h2>
+          <p>We believe that innovation flourishes through diversity, collaboration, and leadership. Our community empowers students to explore emerging technologies, develop professionally, and create meaningful impact through engineering and service. Whether you are an aspiring engineer, an experienced volunteer, or someone passionate about technology, we invite you to be part of our journey.</p>
+          <div class="welcome-signature">
+            <strong>Chairperson</strong>
+            <span>IEEE WIE SLTC Affinity Group</span>
+          </div>
+          <button class="welcome-close-btn" id="welcome-close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

@@ -972,6 +972,19 @@ button, input, textarea, select {
   background-color: #1E183C;
 }
 
+.event-card-img.event-card-img--contain {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  max-height: 240px;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  background-color: #141228;
+  display: block;
+}
+
 .event-card-body {
   padding: 1.75rem;
   display: flex;
@@ -1062,6 +1075,37 @@ button, input, textarea, select {
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+/* Flagship Initiative Section */
+#events > .section:first-child {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#events .about-hero-grid {
+  gap: 3.5rem;
+  align-items: center;
+}
+
+#events .about-image-card {
+  aspect-ratio: 3 / 2;
+  max-width: 560px;
+  padding: 0;
+  overflow: hidden;
+  justify-self: center;
+  background: linear-gradient(145deg, rgba(26, 18, 48, 0.95) 0%, rgba(15, 10, 26, 0.98) 100%);
+  border: 1px solid var(--border-highlight);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+#events .about-card-logo {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
 }
 
 .benefits-grid {
@@ -1754,9 +1798,29 @@ button, input, textarea, select {
   gap: 1.25rem;
 }
 
+.contact-item > div:last-child {
+  min-width: 0;
+}
+
+.contact-item h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+  color: var(--text-main);
+}
+
+.contact-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 .contact-icon {
+  flex: 0 0 48px;
   width: 48px;
   height: 48px;
+  min-width: 48px;
   border-radius: var(--radius-md);
   background: rgba(155, 122, 255, 0.3);
   border: 1px solid rgba(137, 0, 242, 0.3);
@@ -1764,7 +1828,8 @@ button, input, textarea, select {
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .form-group {
@@ -1868,6 +1933,10 @@ button, input, textarea, select {
   .hero-grid, .about-hero-grid, .welcome-grid, .vm-grid, .map-grid, .contact-grid, .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  #events .about-hero-grid {
+    gap: 2.5rem;
   }
   
   .hero-heading {
@@ -2132,6 +2201,15 @@ button, input, textarea, select {
     padding: 2rem 1.25rem;
     max-width: 320px;
     margin: 0 auto;
+  }
+
+  #events > .section:first-child {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  #events .about-image-card {
+    max-width: 100%;
   }
 
   .benefit-card,

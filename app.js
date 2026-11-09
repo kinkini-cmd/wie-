@@ -116,6 +116,9 @@ function initCounterAnimation() {
   function animateCounters() {
     counters.forEach(counter => {
       const target = parseInt(counter.getAttribute('data-target'));
+      const suffix = counter.hasAttribute('data-suffix')
+        ? counter.getAttribute('data-suffix')
+        : (target >= 100 ? '+' : '');
       const duration = 2000;
       const start = 0;
       const startTime = performance.now();
@@ -127,16 +130,12 @@ function initCounterAnimation() {
         const easeOut = 1 - Math.pow(1 - progress, 3);
         const current = Math.floor(easeOut * target);
 
-        if (target >= 100) {
-          counter.textContent = current + '+';
-        } else {
-          counter.textContent = current;
-        }
+        counter.textContent = current + suffix;
 
         if (progress < 1) {
           requestAnimationFrame(updateCounter);
         } else {
-          counter.textContent = target + '+';
+          counter.textContent = target + suffix;
         }
       }
 
